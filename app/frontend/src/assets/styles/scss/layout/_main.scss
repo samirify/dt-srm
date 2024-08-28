@@ -1,0 +1,175 @@
+//
+// General main styles
+//
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: transparent url($bg-image) center center;
+  background-size: cover;
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #ccc !important;
+  }
+
+}
+
+
+.shadow {
+  box-shadow: $shadow-box;
+}
+
+.modal-backdrop {
+  &.client-select-modal {
+    &.show {
+      background: transparent url($bg-image) center center;
+      background-size: cover;
+      opacity: 1;
+    }
+  }
+}
+
+.small-table {
+  font-size: 0.8rem;
+  tr {
+    &.selected-row {
+      background-color: rgba(rgb(228 255 218), var(--bs-bg-opacity));
+      td {
+        color: $black;
+      }
+    }
+  }
+}
+
+.inline-logo {
+  margin-bottom: 5px;
+}
+// Environments
+.env {
+  .border-top {
+    background: transparent;
+    height: 5px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: fixed;
+    top: -1px;
+    left: 0;
+    z-index: 9999;
+  }
+  .env-label {
+    font-weight: bold;
+  }
+  &-development {
+    .border-top {
+      background: $development-main-color;
+    }
+    .env-label {
+      color: $development-main-color;
+    }
+  }
+  &-staging {
+    .border-top {
+      background: $staging-main-color;
+    }
+    .env-label {
+      color: $staging-main-color;
+    }
+  }
+  &-production {
+    .border-top {
+      display: none;
+    }
+  }
+}
+
+.alert {
+  padding: 1.2rem;
+  border-left: 3px solid var(--bs-alert-color);
+  margin-bottom: 1rem;
+  border-radius: 0;
+}
+
+.commit-message {
+  min-width: 400px;
+  max-width: 400px;
+  white-space: "pre-line" !important;
+}
+
+.commit-message-tooltip {
+  .tooltip-inner {
+    text-align: left;
+    min-width: 400px;
+  }
+}
+
+.footer {
+  font-family: var(--bs-font-monospace);
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #eee;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  small {
+    font-size: 0.75em;
+  }
+}
+
+
+.navbar-toggler {
+  color: transparent;
+  outline: none;
+  background: none;
+  border: none;
+  right: 15px;
+  top: 25px;
+  &:active,
+  &:focus {
+    outline: 0;
+  }
+  .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    margin: 4px 0 4px 0;
+    transition: all 0.2s;
+    background: $primary;
+    &:nth-of-type(1) {
+      transform: rotate(45deg);
+      transform-origin: 10% 10%;
+    }
+    &:nth-of-type(2) {
+      opacity: 0;
+      filter: alpha(opacity=0);
+    }
+    &:nth-of-type(3) {
+      transform: rotate(-45deg);
+      transform-origin: 10% 90%;
+    }
+  }
+
+  &.collapsed {
+    .icon-bar {
+      &:nth-of-type(1) {
+        transform: rotate(0);
+      }
+      &:nth-of-type(2) {
+        opacity: 1;
+        filter: alpha(opacity=100);
+      }
+      &:nth-of-type(3) {
+        transform: rotate(0);
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+//
+// General page styles
+//
+.branch-checkout-url-area {
+  background-color: rgba($green, 0.08) !important;
+  border-bottom-color: rgba($green, 0.3);
+  &.no-branch {
+    background-color: rgba($orange, 0.08) !important;
+    border-bottom-color: rgba($orange, 0.3);
+  }
+}
+
+// Scroll to top button
+.scroll-to-top {
+  outline: none !important;
+  position: fixed;
+  right: 2rem;
+  bottom: 1rem;
+  display: block;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  color: $white;
+  border: none;
+  background: fade-out($info, 0.5);
+  z-index: 1;
+  border-radius: 20% !important;
+  &:focus,
+  &:hover {
+    color: white;
+  }
+  &:hover {
+    background: $info;
+  }
+  i {
+    font-weight: 800;
+    font-size: 14px;
+  }
+}
+
+.footer {
+  background-color: #eee;
+  bottom: 0;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
+    Courier New, monospace;
+  font-family: var(--bs-font-monospace);
+  left: 0;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  position: fixed;
+  width: 100%;
+}

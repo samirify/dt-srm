@@ -1,0 +1,68 @@
+<div class="samirify-help-file">
+  <p class="title">How do I setup my repository</p>
+  <h1>
+    <span>What do you need?</span>
+  </h1>
+  <p>
+    <span>Navigate to config/project-pipelines.yaml and add a new entry under <strong>availableProjects</strong> with
+      unique code as the key and then Project Properties as described below:</span>
+  </p>
+  <h2> Project properties </h2>
+  <p>
+    <span>Projects’ configuration is saved into the </span>
+    <strong>project-pipelines.yaml</strong>
+    <span>&nbsp;file which can be found in the </span>
+    <strong>config</strong>
+    <span>&nbsp;folder. All available projects are currently saved under </span>
+    <strong>availableProjects</strong>
+    <span>&nbsp;object/array.</span>
+  </p>
+  <p>
+    <span>Each project consists of a </span>
+    <strong>key (unique code) </span>
+      <span>&nbsp;and </strong>
+    <strong>four</strong>
+    <span>&nbsp;properties as described below:</span>
+  </p>
+  <ul>
+    <li>
+      <strong>name</strong>
+      <span>: This is a name you choose for your project, and can be anything! We only use it to make it easy for you to
+        distinguish between other projects.</span>
+    </li>
+    <li>
+      <strong>files</strong>
+      <span>: This is where you will configure and tell the system where to get the files from. Currently it supports
+      </span>
+      <strong>BitBucket</strong>
+      <span>&nbsp;version control (vc) and the plan is to expand and support others like SVN, GitHub, … etc. <br />To
+        learn how to configure your repository please visit the correspondent help file here: <br />- BitBucket: </span>
+      <a target="_blank"
+        href="https://www.google.com/url?q=http://localhost:3003/help-topics/how_do_i_configure_my_bitbucket_repository.html&amp;sa=D&amp;source=editors&amp;ust=1724727771119774&amp;usg=AOvVaw1sP517hmo3JUZDhjyxvN8J">How
+        do I configure my BitBucket repository?</a>
+    </li>
+    <li>
+      <strong>docker</strong>
+      <span>: We run each project inside a Docker container so we can build the artifacts almost identical to how you’d
+        build them in your environment. And to do this we’ll need a Docker image and the commands you need to run to
+        build your artifact..</span>
+    </li>
+    <li>
+      <strong>remote</strong>
+      <span>: This currently supports only FTP but the idea, again, is to expand the support to more protocols like
+        SFTP, Local zip files, Cloud hosting, … etc..</span>
+    </li>
+  </ul>
+  <table>
+    <tr>
+      <td class="with-border" colspan="1" rowspan="1">
+        <p class="c3">
+          <strong>NOTE:</strong> Please remember NOT to commit any of your project values back to your repository. Soon
+          I’ll be releasing an update where projects configuration is moved to a yaml file (just like bitbucket-pipelies
+          and hopefully I’ll find the time to secure the app behind some authentication so no need to have config files
+          that hold sensitive information.
+        </p>
+      </td>
+    </tr>
+  </table>
+</div>

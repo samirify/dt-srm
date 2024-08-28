@@ -1,0 +1,22 @@
+// Import Samirify Deployment Variables (Overrides Default Bootstrap Variables)
+@import "variables.scss";
+
+// Import Fontawesome
+@import '../../../../node_modules/@fortawesome/fontawesome-free/css/all.css';
+@import '../../../../node_modules/@fortawesome/fontawesome-svg-core/styles.css';
+
+// Import Bootstrap
+@import "../../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Slider
+@import "../../../../node_modules/react-sliding-pane/dist/react-sliding-pane.css";
+
+// Samirify Deployment styles
+@import "../scss/layout/preloaders";
+@import "../scss/layout/bootstrap-override";
+@import "../scss/layout/main";
+@import "../scss/layout/page";
+@import "../scss/code-viewer/viewer-style";
+@import "../scss/help/general";
+@import "../scss/help/slider";
+@import "../scss/help/help-files";

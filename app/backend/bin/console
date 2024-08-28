@@ -1,0 +1,29 @@
+#!/usr/bin/env php
+<?php
+
+use DI\ContainerBuilder;
+use Samirify\Deployment\Command\DeployCommand;
+use Samirify\Deployment\Command\DeploymentFailedEmailCommand;
+use Samirify\Deployment\Command\SendSocketUpdatesCommand;
+use Samirify\Deployment\Service\DeploymentService;
+use Symfony\Component\Console\Application;
+
+require_once dirname(__DIR__) . '/vendor/autoload.php';
+
+try {
+    $container = (new ContainerBuilder())
+        ->addDefinitions(dirname(__DIR__) . '/config/container.php')
+        ->build();
+
+    $application = new Application;
+
+    $deploymentService = new DeploymentService($container);
+
+    $application->add(new DeployCommand($deploymentService, dirname(__DIR__)));
+    $application->add(new SendSocketUpdatesCommand($deploymentService, dirname(__DIR__)));
+    $application->add(new DeploymentFailedEmailCommand($deploymentService));
+
+    $application->run();
+} catch (Exception $e) {
+    die($e->getMessage());
+}

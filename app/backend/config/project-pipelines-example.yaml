@@ -1,0 +1,25 @@
+availableProjects:
+  uniqueProjectCode:
+    name: My project name
+    files:
+      vc: bitbucket
+      workspace: [BITBUCKET_WORKSPACE]
+      repoName: [REPO_NAME]
+      repoToken: [ACCESS_TOKEN]
+      # nestedFolderName: [optional]
+      appUser: [APP_USER]
+      appPassword: [APP_PASSWORD]
+    # docker:
+    #   image: 'node:20.11.1-alpine'
+    #   excludeFiles: []
+    #   artifact: build
+    #   commands:
+    #   - npm install
+    #   - npm run build
+    remote:
+      protocol: ftp
+      location: /public_html/my-project/path
+      host: X.X.X.X
+      port: 21
+      username: ftpUsername
+      password: ftpPassword

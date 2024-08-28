@@ -1,0 +1,26 @@
+.slide-pane__overlay {
+  z-index: 1021;
+  .slide-pane {
+    max-width: 800px !important;
+  }
+
+  .slide-pane__header {
+    flex: 0 0 73px;
+  }
+
+  .slide-pane__content {
+    padding-top: 40px;
+    .inner-help-topic-selector {
+      top: 63px;
+      left: 0;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .slide-pane__overlay {
+    .slide-pane {
+      width: 100% !important;
+    }
+  }
+}

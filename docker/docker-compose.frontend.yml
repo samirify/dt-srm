@@ -1,0 +1,26 @@
+services:
+  frontend:
+    container_name: srm-frontend-app
+    build:
+      context: ../
+      args:
+        - PORT=$PORT
+      dockerfile: ./docker/frontend/Dockerfile
+    volumes:
+      - ../app/frontend/:/app
+      - /app/node_modules
+    ports:
+      - $PORT:$PORT
+    stdin_open: true
+    tty: true
+    restart: on-failure
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+    networks:
+      - srm_internal
+
+networks:
+  srm_internal:
+    driver: bridge
+    name: srm_internal

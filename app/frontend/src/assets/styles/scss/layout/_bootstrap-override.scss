@@ -1,0 +1,33 @@
+//
+// Overriding Bootstrap styles
+//
+.form-label {
+  color: #6b778c;
+  font-size: 0.8em;
+  line-height: 1.9;
+  font-weight: 600;
+  text-align: left;
+}
+
+.form-control {
+  background: #fafbfc;
+  border-color: rgb(223, 225, 230);
+  border-radius: 3px;
+  border-style: solid;
+}
+.form-control:focus {
+  background: white;
+  box-shadow: none;
+}
+
+.btn-group-xs > .btn,
+.btn-xs {
+  padding: 0.25rem 0.4rem;
+  font-size: 0.775rem;
+  line-height: 0.5;
+  border-radius: 0.2rem;
+}
+
+.btn:focus {
+  box-shadow: none !important;
+}

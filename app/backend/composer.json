@@ -1,0 +1,33 @@
+{
+    "name": "samirify/deployment",
+    "autoload": {
+        "psr-4": {
+            "Samirify\\Deployment\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Samir Ibrahim (Tech)",
+            "email": "tech@samirify.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "^4.14",
+        "nyholm/psr7": "^1.8",
+        "nyholm/psr7-server": "^1.1",
+        "laminas/laminas-diactoros": "^3.3",
+        "vlucas/phpdotenv": "^5.6",
+        "php-di/slim-bridge": "^3.4",
+        "symfony/console": "^7.1",
+        "phrity/websocket": "^3.0",
+        "symfony/process": "^7.1",
+        "symfony/mailer": "^7.1",
+        "ramsey/uuid": "^4.7",
+        "stevebauman/hypertext": "^1.1",
+        "guzzlehttp/guzzle": "^7.8",
+        "selective/database": "^3.2",
+        "monolog/monolog": "^3.7",
+        "symfony/lock": "^7.1",
+        "symfony/yaml": "^7.1"
+    }
+}
