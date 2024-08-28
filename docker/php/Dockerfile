@@ -27,7 +27,7 @@ RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd sockets ftp &
 
 # Mailer setup
 RUN echo "hostname=localhost.localdomain" > /etc/ssmtp/ssmtp.conf
-RUN echo "root=info@soiswis.net" >> /etc/ssmtp/ssmtp.conf
+RUN echo "root=info@samirify.com" >> /etc/ssmtp/ssmtp.conf
 RUN echo "mailhub=mailhog:1025" >> /etc/ssmtp/ssmtp.conf
 RUN echo "sendmail_path=/usr/sbin/ssmtp -t" >> /usr/local/etc/php/conf.d/php-sendmail.ini
 
