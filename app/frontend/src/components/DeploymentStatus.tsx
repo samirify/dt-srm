@@ -93,6 +93,7 @@ const DeploymentStatus: FC<DeploymentStatusProps> = () => {
       !initialized.current &&
       process.env.REACT_APP_DEPLOYMENT_SOCKET_SERVER_ADDRESS
     ) {
+      loadProjectStatus();
       dispatch(
         addCodeLines({
           id: uuidv4(),
@@ -110,7 +111,6 @@ const DeploymentStatus: FC<DeploymentStatusProps> = () => {
 
       ws.current.onopen = () => {
         setServerIsConnected(true);
-        loadProjectStatus();
       };
 
       ws.current.onmessage = (event: any) => {
@@ -219,14 +219,12 @@ const DeploymentStatus: FC<DeploymentStatusProps> = () => {
                 <li className="list-group-item px-3 d-flex align-items-center justify-content-between">
                   <span className="text-muted small">Live updates</span>
                   <strong
-                    className={`small text-${
-                      serverIsConnected ? "success" : "danger"
-                    }`}
+                    className={`small text-${serverIsConnected ? "success" : "danger"
+                      }`}
                   >
                     <span
-                      className={`align-middle me-1 border border-4 border-${
-                        serverIsConnected ? "success" : "danger"
-                      } rounded-circle d-inline-block`}
+                      className={`align-middle me-1 border border-4 border-${serverIsConnected ? "success" : "danger"
+                        } rounded-circle d-inline-block`}
                     />
                     {serverIsConnected ? "Connected" : "Disconnected"}
                   </strong>
