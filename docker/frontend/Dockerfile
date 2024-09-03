@@ -1,4 +1,4 @@
-FROM node:20.11.1-alpine
+FROM node:20.7.0-alpine
 
 WORKDIR /app
 
@@ -11,7 +11,7 @@ COPY app/frontend/package.json /app/package.json
 COPY app/frontend/package-lock.json /app/package-lock.json
 COPY app/frontend/tsconfig.json /app/tsconfig.json
 
-RUN npm cache clean --force && npm install -g npm@10.5.0 && npm install --legacy-peer-deps
+RUN npm cache clean --force && npm install -g npm@10.8.3 && npm install --legacy-peer-deps
 
 COPY . /app
 
