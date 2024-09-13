@@ -81,8 +81,15 @@ availableProjects:
 
 #### Start Deploying
 Once you've completed the steps above, start the sockets server by running:
+
+MAC OS:
 ```
 make sockets-dev
+```
+Windows:
+```
+> docker exec -it srm-php chmod 777 /var/run/docker.sock
+> docker exec -it srm-php php sockets-server/index.php
 ```
 
 Then navigate to [http://localhost:3003](http://localhost:3003) and start deploying!
